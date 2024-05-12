@@ -42,8 +42,6 @@ else:
 
 3=write a program to find out square root in python
 
-
-
 User
 find the gcd of two numbers in python 
 ChatGPT
@@ -117,7 +115,7 @@ def find_square_root(num):
     """
     Find the square root of a given number.
     
-    Parameters:
+    Parameters:  
         num (float): The number whose square root is to be found.
         
     Returns:
@@ -128,4 +126,282 @@ def find_square_root(num):
 # Example usage:
 number = float(input("Enter a number to find its square root: "))
 square_root = find_square_root(number)
-print(f"The square root of {number} is: {square_root}")
+print(f"The square root of {number} is: {square_root}")\
+
+5=write a program to find out largest number in python 
+
+def find_largest_number(numbers):
+    if not numbers:
+        return None  # Return None if the list is empty
+
+    max_number = numbers[0]  # Assume the first number is the largest
+
+    for num in numbers:
+        if num > max_number:
+            max_number = num
+
+    return max_number
+
+# Example usage:
+numbers_list = [10, 5, 20, 15, 8]
+largest_number = find_largest_number(numbers_list)
+print("The largest number is:", largest_number)  
+
+6= write a program to find out value  using bineary search in python 
+
+def binary_search(arr, target):
+    low = 0
+    high = len(arr) - 1
+
+    while low <= high:
+        mid = (low + high) // 2
+        mid_val = arr[mid]
+
+        if mid_val == target:
+            return mid  # Found the target value, return its index
+        elif mid_val < target:
+            low = mid + 1  # Target is in the upper half
+        else:
+            high = mid - 1  # Target is in the lower half
+
+    return -1  # Target not found
+
+# Example usage:
+sorted_list = [2, 5, 8, 12, 16, 23, 38, 56, 72, 91]
+target_value = 23
+index = binary_search(sorted_list, target_value)
+
+if index != -1:
+    print(f"The value {target_value} is found at index {index}.")
+else:
+    print(f"The value {target_value} is not present in the list."
+
+7= write a program to find out the prime number 
+
+def is_prime(number):
+    if number <= 1:
+        return False  # 1 and numbers less than 1 are not prime
+
+    # Check divisibility from 2 to the square root of the number
+    for i in range(2, int(number**0.5) + 1):
+        if number % i == 0:
+            return False  # Number is divisible by i, hence not prime
+
+    return True  # If not divisible by any number, it's prime
+
+# Example usage:
+number_to_check = 17
+if is_prime(number_to_check):
+    print(f"{number_to_check} is a prime number.")
+else:
+    print(f"{number_to_check} is not a prime number.")
+
+8=write a program checking a number whether even or odd 
+
+def check_even_odd(number):
+    if number % 2 == 0:
+        return "even"
+    else:
+        return "odd"
+
+# Example usage:
+number_to_check = 7
+result = check_even_odd(number_to_check)
+print(f"{number_to_check} is {result}.")
+
+9=write a program to calculate area of triangle using heron's formula
+
+def calculate_area(a, b, c):
+    # Calculate the semi-perimeter
+    s = (a + b + c) / 2
+
+    # Calculate the area using Heron's formula
+    area = (s * (s - a) * (s - b) * (s - c)) ** 0.5
+
+    return area
+
+# Example usage:
+side_a = 5
+side_b = 6
+side_c = 7
+
+triangle_area = calculate_area(side_a, side_b, side_c)
+print("The area of the triangle is:", triangle_area)
+ 
+10=write a program to calculate distance of  two points 
+
+def calculate_distance(x1, y1, x2, y2):
+    distance = ((x2 - x1) ** 2 + (y2 - y1) ** 2) ** 0.5
+    return distance
+
+# Example usage:
+x1, y1 = 2, 3  # Coordinates of the first point
+x2, y2 = 5, 7  # Coordinates of the second point
+
+distance = calculate_distance(x1, y1, x2, y2)
+print("The distance between the two points is:", distance)
+
+11=write a program to calculate all the bill amount of an item given its given its quantity , value, distance 
+
+def calculate_bill_amount(quantity, value_per_item, distance):
+    # Calculate the total cost of the items
+    total_cost = quantity * value_per_item
+    
+    # Calculate the delivery charge based on distance
+    if distance <= 5:
+        delivery_charge = 0
+    elif distance <= 10:
+        delivery_charge = 5
+    elif distance <= 20:
+        delivery_charge = 10
+    else:
+        delivery_charge = 15
+    
+    # Add delivery charge to the total cost
+    total_bill_amount = total_cost + delivery_charge
+    return total_bill_amount
+
+# Example usage:
+quantity = 10  # Quantity of the item
+value_per_item = 20  # Value of the item per unit
+distance = 8  # Distance in kilometers
+
+bill_amount = calculate_bill_amount(quantity, value_per_item, distance)
+print("Total bill amount:", bill_amount)
+ 
+12=write a program to print current date and time 
+
+import datetime
+
+def print_current_date_time():
+    current_date_time = datetime.datetime.now()
+    print("Current date and time:", current_date_time)
+
+# Call the function to print current date and time
+print_current_date_time()
+
+13= write a program to demonstrate the working with tuples 
+
+# Creating a tuple
+student = ("John", 22, "Male", "Physics")
+
+# Accessing elements of a tuple
+print("Name:", student[0])
+print("Age:", student[1])
+print("Gender:", student[2])
+print("Major:", student[3])
+
+# Iterating through a tuple
+print("\nIterating through the tuple:")
+for info in student:
+    print(info)
+
+# Tuple unpacking
+name, age, gender, major = student
+print("\nTuple unpacking:")
+print("Name:", name)
+print("Age:", age)
+print("Gender:", gender)
+print("Major:", major)
+
+# Length of a tuple
+print("\nLength of the tuple:", len(student))
+
+# Concatenating tuples
+tuple1 = (1, 2, 3)
+tuple2 = (4, 5, 6)
+concatenated_tuple = tuple1 + tuple2
+print("\nConcatenated tuple:", concatenated_tuple)
+
+# Repetition of tuples
+repeated_tuple = tuple1 * 3
+print("Repeated tuple:", repeated_tuple)
+
+# Checking membership in a tuple
+print("\nChecking membership:")
+print(2 in tuple1)
+print(7 in tuple2)
+
+# Slicing a tuple
+print("\nSlicing a tuple:")
+print(concatenated_tuple[2:])
+print(repeated_tuple[:4])
+
+# Finding min and max elements in a tuple
+numbers = (3, 1, 7, 5, 9, 2)
+print("\nMinimum number:", min(numbers))
+print("Maximum number:", max(numbers))
+
+14 =write a program to demonstrate the working with disctionaris
+
+# Creating a dictionary
+student = {
+    "name": "John",
+    "age": 22,
+    "gender": "Male",
+    "major": "Physics"
+}
+
+# Accessing elements of a dictionary
+print("Name:", student["name"])
+print("Age:", student["age"])
+print("Gender:", student["gender"])
+print("Major:", student["major"])
+
+# Iterating through a dictionary
+print("\nIterating through the dictionary:")
+for key, value in student.items():
+    print(key + ":", value)
+
+# Adding new key-value pairs to a dictionary
+student["grade"] = "A"
+print("\nUpdated dictionary:", student)
+
+# Removing a key-value pair from a dictionary
+del student["age"]
+print("Dictionary after removing 'age':", student)
+
+# Length of a dictionary
+print("\nLength of the dictionary:", len(student))
+
+# Copying a dictionary
+student_copy = student.copy()
+print("Copy of the dictionary:", student_copy)
+
+# Checking membership in a dictionary
+print("\nChecking membership:")
+print("major" in student)
+print("GPA" in student)
+
+# Clearing a dictionary
+student.clear()
+print("\nCleared dictionary:", student)
+
+15=write a program to demonstarte any 2 math built in function 
+
+import math
+
+# Calculating square root using math.sqrt()
+number = 25
+square_root = math.sqrt(number)
+print("Square root of", number, "is:", square_root)
+
+# Calculating power using math.pow()
+base = 2
+exponent = 3
+power_result = math.pow(base, exponent)
+print(base, "raised to the power of", exponent, "is:", power_result)
+
+16=write a program demonstrate any 2 math built in function
+
+import math
+
+# Using math.floor() to round down a number
+num1 = 4.8
+floor_result = math.floor(num1)
+print("Floor of", num1, "is:", floor_result)
+
+# Using math.ceil() to round up a number
+num2 = 4.2
+ceil_result = math.ceil(num2)
+print("Ceiling of", num2, "is:", ceil_result)
